@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bác Hồ với Thiếu Nhi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Trang web về Bác Hồ dành cho Thiếu Nhi</h1>
+    <nav>
+      <ul>
+        <li><a href="#bio">Tiểu sử</a></li>
+        <li><a href="#gallery">Hình ảnh & Video</a></li>
+        <li><a href="#quiz">Trắc nghiệm</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="bio">
+    <h2>Tiểu sử về Hồ Chí Minh</h2>
+    <p>Bác Hồ, tên thật là Nguyễn Sinh Cung, sinh ngày 19 tháng 5 năm 1890. Bác đã dẫn dắt đất nước Việt Nam giành độc lập, là người sáng lập Đảng Cộng sản Việt Nam, và là biểu tượng vĩ đại của hòa bình và tự do...</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Hình ảnh & Video</h2>
+    <div class="gallery">
+      <img src="images/ho-chi-minh-1.jpg" alt="Bác Hồ với Thiếu Nhi">
+      <img src="images/ho-chi-minh-2.jpg" alt="Bác Hồ thăm Thiếu Nhi">
+    </div>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/example-video" title="Video Bác Hồ với Thiếu Nhi" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <h2>Trắc nghiệm về Bác Hồ</h2>
+    <div id="quiz-container">
+      <p>Câu hỏi 1: Bác Hồ sinh ngày nào?</p>
+      <input type="radio" id="q1a" name="q1" value="wrong"> 1/1/1900<br>
+      <input type="radio" id="q1b" name="q1" value="correct"> 19/5/1890<br>
+      <input type="radio" id="q1c" name="q1" value="wrong"> 2/9/1945<br>
+
+      <p>Câu hỏi 2: Tên thật của Bác Hồ là gì?</p>
+      <input type="radio" id="q2a" name="q2" value="correct"> Nguyễn Sinh Cung<br>
+      <input type="radio" id="q2b" name="q2" value="wrong"> Nguyễn Tất Thành<br>
+
+      <button onclick="checkQuiz()">Nộp bài</button>
+      <p id="result"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Bản quyền © 2024 - Trang web dành cho thiếu nhi</p>
+  </footer>
+
+  <!-- Nhúng mã JavaScript trực tiếp -->
+  <script>
+    function checkQuiz() {
+      let score = 0;
+
+      if (document.getElementById('q1b').checked) {
+        score++;
+      }
+      if (document.getElementById('q2a').checked) {
+        score++;
+      }
+
+      let resultText = `Bạn trả lời đúng ${score}/2 câu hỏi.`;
+      document.getElementById('result').textContent = resultText;
+    }
+  </script>
+</body>
+</html>
